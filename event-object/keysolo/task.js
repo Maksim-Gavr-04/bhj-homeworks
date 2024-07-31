@@ -49,8 +49,9 @@ class Game {
     let remaining = seconds;
 
     function countdown() {
+      classThis.timerElement.textContent = remaining;
       remaining -= 1;
-      this.timerElement.textContent = remaining;
+      classThis.timerElement.textContent = remaining;
       if (remaining < 1) {
         classThis.fail();
         clearInterval(idInterval);
