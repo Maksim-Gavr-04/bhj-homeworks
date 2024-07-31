@@ -4,6 +4,7 @@ class Game {
     this.wordElement = container.querySelector('.word');
     this.winsElement = container.querySelector('.status__wins');
     this.lossElement = container.querySelector('.status__loss');
+    this.timerElement = container.querySelector('.status__time');
 
     this.reset();
 
@@ -24,7 +25,39 @@ class Game {
       В случае правильного ввода символа вызываем this.success()
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
-     */
+    */
+    const symbolComparison = (event) => {
+      let key = `${event.key}`;
+
+      if (key === this.currentSymbol.textContent) {
+        this.success();
+        return;
+      } 
+
+      if (key === 'Shift' || key === 'Alt' || key === 'Control') {
+        return;
+      }
+
+      this.fail();
+    };
+    
+    document.addEventListener("keyup", symbolComparison);
+  }
+
+  getTimer(seconds) {
+    const classThis = this;
+    let remaining = seconds;
+
+    function countdown() {
+      remaining -= 1;
+      this.timerElement.textContent = remaining;
+      if (remaining < 1) {
+        classThis.fail();
+        clearInterval(idInterval);
+      }
+    }
+
+    let idInterval = setInterval(countdown, 1000);
   }
 
   success() {
@@ -56,10 +89,13 @@ class Game {
     const word = this.getWord();
 
     this.renderWord(word);
+
+    this.getTimer(word.length);
   }
 
   getWord() {
     const words = [
+        'avocado',
         'bob',
         'awesome',
         'netology',
@@ -70,7 +106,9 @@ class Game {
         'popcorn',
         'cinema',
         'love',
-        'javascript'
+        'javascript',
+        'Арбуз',
+        'я люблю kitkat'
       ],
       index = Math.floor(Math.random() * words.length);
 
