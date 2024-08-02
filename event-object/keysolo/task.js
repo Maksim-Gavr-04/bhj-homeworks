@@ -4,7 +4,7 @@ class Game {
     this.wordElement = container.querySelector('.word');
     this.winsElement = container.querySelector('.status__wins');
     this.lossElement = container.querySelector('.status__loss');
-    this.timerElement = container.querySelector('.status__time');
+    this.timerElement = container.querySelector('.status__timer');
 
     this.reset();
 
@@ -44,23 +44,6 @@ class Game {
     document.addEventListener("keyup", symbolComparison);
   }
 
-  getTimer(seconds) {
-    const classThis = this;
-    let remaining = seconds;
-
-    function countdown() {
-      classThis.timerElement.textContent = remaining;
-      remaining -= 1;
-      classThis.timerElement.textContent = remaining;
-      if (remaining < 1) {
-        classThis.fail();
-        clearInterval(idInterval);
-      }
-    }
-
-    let idInterval = setInterval(countdown, 1000);
-  }
-
   success() {
     if(this.currentSymbol.classList.contains("symbol_current")) this.currentSymbol.classList.remove("symbol_current");
     this.currentSymbol.classList.add('symbol_correct');
@@ -87,11 +70,23 @@ class Game {
   }
 
   setNewWord() {
-    const word = this.getWord();
+    // Удаление старого интервала:
+    clearInterval(this.idInterval);
 
+    // Выбор и вставка в HTML нового слова:
+    const word = this.getWord();
     this.renderWord(word);
 
-    this.getTimer(word.length);
+    // Расчёт и вставка в HTML времени для ввода нового слова:
+    let remainingSeconds = Array.from(this.wordElement.textContent).length;
+    this.timerElement.textContent = remainingSeconds;
+
+    // Установка нового интервала:
+    this.idInterval = setInterval(() => {
+      remainingSeconds -= 1;
+      this.timerElement.textContent = remainingSeconds;
+      if (remainingSeconds === 0) this.fail();
+    }, 1000);
   }
 
   getWord() {
@@ -109,7 +104,8 @@ class Game {
         'love',
         'javascript',
         'Арбуз',
-        'я люблю kitkat'
+        'Клавиатура',
+        'Я люблю kitkat'
       ],
       index = Math.floor(Math.random() * words.length);
 
@@ -129,5 +125,4 @@ class Game {
   }
 }
 
-new Game(document.getElementById('game'))
-
+new Game(document.getElementById('game'));
