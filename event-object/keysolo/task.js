@@ -1,3 +1,4 @@
+// Задача 2.2 (Соло на клавиатуре) + Повышенный уровень сложности:
 class Game {
   constructor(container) {
     this.container = container;
@@ -27,7 +28,7 @@ class Game {
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
     */
     const symbolComparison = (event) => {
-      let key = `${event.key}`;
+      let key = event.key;
 
       if (key === this.currentSymbol.textContent) {
         this.success();

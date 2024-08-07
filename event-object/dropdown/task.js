@@ -1,3 +1,4 @@
+// Задача 2.1 (Выпадающие списки):
 const dropdownValue = document.querySelector(".dropdown__value");
 const dropdownList = document.querySelector(".dropdown__list");
 const dropdownItems = Array.from(document.querySelectorAll(".dropdown__item"));

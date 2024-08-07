@@ -1,3 +1,4 @@
+// Задача 2.3 (Вкладки):
 const allTabs = Array.from(document.querySelectorAll('.tab'));
 let activeTab = document.querySelector('.tab_active');
 

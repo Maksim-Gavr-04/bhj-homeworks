@@ -2,9 +2,9 @@
 
 Выполните задания:
 
-1. [Выпадающие списки.](./dropdown/)
-2. [Соло на клавиатуре.](./keysolo/)
-3. [Вкладки.](./tabs/)
+1. [Выпадающие списки.](./dropdown/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/event-object/dropdown/task.html)
+2. [Соло на клавиатуре.](./keysolo/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/event-object/keysolo/task.html)
+3. [Вкладки.](./tabs/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/event-object/tabs/task.html)
 
 Чтобы получить зачёт, выполните все три задачи. Пришлите на проверку все три задачи сразу, не частями.
 
