@@ -1,6 +1,6 @@
 # Таймер обратного отсчёта
 
-Домашнее задание к занятию 1.1 «Возможности JavaScript в браузере».
+[Домашнее задание к занятию 1.1 «Возможности JavaScript в браузере»](https://maksim-gavr-04.github.io/bhj-homeworks/js-features/countdown/task.html)
 
 ## Описание 
 

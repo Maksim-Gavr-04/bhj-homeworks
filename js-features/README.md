@@ -2,9 +2,9 @@
 
 Выполните задачи:
 
-1. [Таймер обратного отсчёта.](./countdown/)
-2. [Игра-кликер.](./cookie-clicker/)
-3. [Игра «Убей кротов».](./mole-game/)
+1. [Таймер обратного отсчёта.](./countdown/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/js-features/countdown/task.html)
+2. [Игра-кликер.](./cookie-clicker/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/js-features/cookie-clicker/task.html)
+3. [Игра «Убей кротов».](./mole-game/) - [ссылка на выполненное задание](https://maksim-gavr-04.github.io/bhj-homeworks/js-features/cookie-clicker/task.html)
 
 Чтобы получить зачёт, выполните все три задачи. Пришлите на проверку все три задачи сразу, не частями.
 

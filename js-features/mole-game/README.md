@@ -1,6 +1,6 @@
 # Игра «Убей кротов»
 
-Домашнее задание к занятию 1.1 «Возможности JavaScript в браузере».
+[Домашнее задание к занятию 1.3 «Возможности JavaScript в браузере»](https://maksim-gavr-04.github.io/bhj-homeworks/js-features/mole-game/task.html)
 
 ## Описание 
 
