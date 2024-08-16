@@ -9,6 +9,9 @@ body {
 
 .cart__product {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cart__product-count {
   position: absolute;
@@ -33,8 +36,6 @@ body {
   text-decoration: none;
   cursor: pointer;
   margin-right: 10px;
-  display: flex;
-  justify-content: center;
 }
 
 .product {

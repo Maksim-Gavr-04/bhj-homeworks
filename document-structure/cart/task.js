@@ -4,8 +4,6 @@ arrOfProducts.forEach((product, index) => {
   product.addEventListener('click', (event) => {
     const buttonAddToCart = document.querySelectorAll('.product__add')[index];
     const idProduct = product.closest('.product').dataset.id;
-
-    checkingForRemovingProductFromCart();
     
     // Если пользователь добавляет товар в корзину (жмёт на кнопку "Добавить в корзину"):
     if (event.target === buttonAddToCart) {
@@ -17,7 +15,7 @@ arrOfProducts.forEach((product, index) => {
   });
 });
 
-function checkingForRemovingProductFromCart() {
+function handlerForClickingRemoveProductBtn() {
   [...document.querySelectorAll('.cart__product-remove')].forEach(btnRemove => {
     btnRemove.addEventListener('click', () => {
       btnRemove.closest('.cart__product').remove();
@@ -26,11 +24,11 @@ function checkingForRemovingProductFromCart() {
 }
 
 function plusOrMinusQuantityProduct(eventTarget, indexProduct) {
-  const buttonBlus = document.querySelectorAll('.product__quantity-control_inc')[indexProduct];
+  const buttonPlus = document.querySelectorAll('.product__quantity-control_inc')[indexProduct];
   const buttonMinus = document.querySelectorAll('.product__quantity-control_dec')[indexProduct];
   const valueOfQuantity = document.querySelectorAll('.product__quantity-value')[indexProduct];
 
-  if (eventTarget === buttonBlus) {
+  if (eventTarget === buttonPlus) {
     valueOfQuantity.textContent++;
   } else if (eventTarget === buttonMinus && valueOfQuantity.textContent > 1) {
     valueOfQuantity.textContent--;
@@ -55,10 +53,11 @@ function addingProductToCart(idProduct, indexProduct) {
     <div class="cart__product" data-id="${idProduct}">
       <img class="cart__product-image" src="${imageProduct}">
       <div class="cart__product-count">${quantityProduct.textContent}</div>
-      <div class="cart__product-remove">&times;</div>
+      <img src="https://img.icons8.com/?size=20&id=22922&format=png" class="cart__product-remove"></img>
     </div>`;
     const cartList = document.querySelector('.cart__products'); 
     cartList.insertAdjacentHTML("beforeEnd", cartTemplate);
+    handlerForClickingRemoveProductBtn();
   }
 
   quantityProduct.textContent = 1;
