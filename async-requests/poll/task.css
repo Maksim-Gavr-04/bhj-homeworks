@@ -9,3 +9,11 @@ body {
 .poll__title {
   margin-bottom: 20px;
 }
+
+.poll__percentage {
+  margin: 10px;
+}
+
+.poll__percentage__bold {
+  font-weight: bold;
+}

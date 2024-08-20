@@ -31,6 +31,10 @@ button {
   width: 600px;
 }
 
+#upload_progress-text {
+  margin: 0 0 10px;
+}
+
 .input__wrapper {
   display: inline-block;
 }
