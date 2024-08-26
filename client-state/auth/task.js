@@ -32,7 +32,7 @@ function postRequestOnSignin() {
   xhr.send(formData);
 }
 
-function SigninAndSignoutActions() {
+function signinAndSignoutActions() {
   if (localStorage.getItem('idUser')) {
     welcome.classList.add('welcome_active');
     idUser.textContent = localStorage.getItem('idUser');
@@ -54,4 +54,4 @@ function SigninAndSignoutActions() {
   });
 }
 
-SigninAndSignoutActions();
+signinAndSignoutActions();
