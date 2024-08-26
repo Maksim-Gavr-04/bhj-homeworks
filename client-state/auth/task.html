@@ -20,7 +20,7 @@
     </header>
     <main class="content">
         <div class="card">
-            <div class="signin signin_active" id="signin">
+            <div class="signin" id="signin">
                 <h2 class="title">Вход</h2>
                 <form action="https://students.netoservices.ru/nestjs-backend/auth" id="signin__form">
                     <div class="row">
@@ -35,7 +35,10 @@
                 </form>
             </div>
             <div class="welcome" id="welcome">
-                Добро пожаловать, пользователь #<span id="user_id"></span>
+                <p class="welcome__text">
+                    Добро пожаловать, пользователь #<span id="user_id"></span>!
+                </p>
+                <button class="signoff__btn" id="signoff__btn">Exit</button>
             </div>
         </div>
         </main>

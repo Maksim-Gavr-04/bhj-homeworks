@@ -1,9 +1,11 @@
 .signin {
   display: none;
 }
+
 .signin_active {
   display: block;
 }
+
 .control {
     width: 100%;
     display: block;
@@ -42,6 +44,16 @@
 }
 
 .welcome_active {
-  display: block;
+  display: flex;
   text-align: center;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.signoff__btn {
+  background-color: #ed3c25;
+}
+
+.signoff__btn:hover {
+  background-color: #ff060684;
 }
