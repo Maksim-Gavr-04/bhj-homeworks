@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Volume</title>
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <h1>Volume</h1>
+  <div class="volume-container">
+    <div class="volume-bar">
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+      <div class="volume-rect"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="volume-control">
+      <div class="volume-down"><span>➖</span></div>
+      <div class="volume-up"><span>➕</span></div>
+    </div>
+    <div class="indicator-container">
+      <span class="indicator">0</span>
+    </div>
+  </div>
+    
+  <script>
+
+    const volumeRects = Array.from(document.querySelectorAll(".volume-rect"));
+    const volumeMinuseBtn = document.querySelector(".volume-down");
+    const volumePlusBtn = document.querySelector(".volume-up");
+    const indicator = document.querySelector(".indicator");
+    let currentIndex = 0;
+
+    volumePlusBtn.addEventListener("click", () => {
+      if (currentIndex > 9) {
+        return;
+      }
+
+      volumeRects[currentIndex].classList.add("volume-rect__active");
+      currentIndex++;
+      indicator.textContent = currentIndex;
+    });
+
+    volumeMinuseBtn.addEventListener("click", () => {
+      if (currentIndex < 1) {
+        return;
+      }
+
+      currentIndex--;
+      volumeRects[currentIndex].classList.remove("volume-rect__active");
+      indicator.textContent = currentIndex;
+    });
+    
+  </script>
+</body>
+</html>

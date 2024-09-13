@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Films</title>
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <h1>Films</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Название фильма:</label>
+      <input type="text" class="form-control" id="name" placeholder="Введите название фильма" required>
+    </div>
+    <div class="form-group">
+      <label for="genre">Жанр:</label>
+      <select id="genre" required></select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-hover">Отправить</button>
+  </form>
+  <div class="content"></div>
+
+  <script>
+
+    const form = document.querySelector('form');
+    const select = document.getElementById('genre');
+    const pasteContent = document.querySelector('.content');
+
+    let arr = [ {label: 'Драма', value: 'drama'}, {label: 'Комедия', value: 'comedy'}, {label: 'Фантастика', value: 'sci-fi'} ];
+        
+    arr.forEach(item => select.add(new Option(item.label, item.value)));
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      let pTitle = document.createElement("p");
+      pTitle.innerHTML = `<b>Название фильма:</b> ${form.elements['name'].value}`;
+      let pGenre = document.createElement("p");
+      pGenre.innerHTML = `<b>Жанр:</b> ${select.options[select.selectedIndex].text}`;
+      
+      pasteContent.appendChild(pTitle);
+      pasteContent.appendChild(pGenre);
+      
+      form.reset();
+    });
+
+  </script>
+</body>
+</html>

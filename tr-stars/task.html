@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Switcher</title>
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <h1>Stars</h1>
+  <div class="star-container">
+    <div class="star">
+      <svg viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,1.375 L12.982,7.57 L19.659,7.864 L14.531,12.433 L16.402,18.625 L10,15.244 L3.598,18.625 L5.469,12.433 L0.341,7.864 L7.018,7.57 L10,1.375 Z"/>
+      </svg>
+    </div>
+    <div class="star">
+      <svg viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,1.375 L12.982,7.57 L19.659,7.864 L14.531,12.433 L16.402,18.625 L10,15.244 L3.598,18.625 L5.469,12.433 L0.341,7.864 L7.018,7.57 L10,1.375 Z"/>
+      </svg>
+    </div>
+    <div class="star">
+      <svg viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,1.375 L12.982,7.57 L19.659,7.864 L14.531,12.433 L16.402,18.625 L10,15.244 L3.598,18.625 L5.469,12.433 L0.341,7.864 L7.018,7.57 L10,1.375 Z"/>
+      </svg>
+    </div>
+    <div class="star">
+      <svg viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,1.375 L12.982,7.57 L19.659,7.864 L14.531,12.433 L16.402,18.625 L10,15.244 L3.598,18.625 L5.469,12.433 L0.341,7.864 L7.018,7.57 L10,1.375 Z"/>
+      </svg>
+    </div>
+    <div class="star">
+      <svg viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10,1.375 L12.982,7.57 L19.659,7.864 L14.531,12.433 L16.402,18.625 L10,15.244 L3.598,18.625 L5.469,12.433 L0.341,7.864 L7.018,7.57 L10,1.375 Z"/>
+      </svg>
+    </div>
+  </div>
+    
+  <script>
+
+    const stars = Array.from(document.querySelectorAll(".star"));
+
+    stars.forEach((star, idx) => {
+      star.addEventListener("click", () => {
+        stars.forEach(s => s.classList.remove('star_active'));
+        const activeStars = stars.slice(0, idx + 1);
+        activeStars.forEach(s => s.classList.add('star_active'));
+      });
+    });
+    
+  </script>
+</body>
+</html>

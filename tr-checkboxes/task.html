@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Make a Margarita pizza</title>
+  <link rel="stylesheet" href="task.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Make a Margarita pizza</h1>
+    <div class="pizza">
+      <label>
+        <input type="checkbox" id="main-checkbox">
+        Pizza
+      </label>
+      <label>
+        <input type="checkbox" class="sub-checkbox" name="sub-checkbox-1">
+        Dough
+      </label>
+      <label>
+        <input type="checkbox" class="sub-checkbox" name="sub-checkbox-2">
+        Cheese
+      </label>
+      <label>
+        <input type="checkbox" class="sub-checkbox" name="sub-checkbox-3">
+        Tomato
+      </label>
+    </div>
+  </div>
+
+  <script>
+
+    const mainCheckbox = document.getElementById('main-checkbox');
+    const arrOfCheckboxes = Array.from(document.querySelectorAll('.sub-checkbox'));
+    let i = 0;
+
+    mainCheckbox.addEventListener('change', () => {
+      // if (mainCheckbox.checked) {
+      //     arrOfCheckboxes.forEach(item => item.checked = true);
+      // } else {
+      //     arrOfCheckboxes.forEach(item => item.checked = false);
+      // }
+      
+      arrOfCheckboxes.forEach(item => item.checked = mainCheckbox.checked);
+    });
+
+    arrOfCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        // if (arrOfCheckboxes[0].checked && arrOfCheckboxes[1].checked && arrOfCheckboxes[2].checked) {
+        //     mainCheckbox.checked = true;
+        // }
+
+        // if (mainCheckbox.checked && !checkbox.checked) {
+        //     mainCheckbox.checked = false;
+        // }
+
+        mainCheckbox.checked = arrOfCheckboxes.every(box => box.checked);
+      });
+    });
+
+  </script>
+</body>
+</html>
